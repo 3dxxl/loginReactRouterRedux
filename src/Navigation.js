@@ -23,18 +23,16 @@ import { Menu, Button } from 'semantic-ui-react'
 class Navigation extends Component {
 
 
-    //Auslogg Anweisung
-    // componentWillReceiveProps(nextProps) {
+     //Auslogg Anweisung
+    componentWillUpdate(nextProps) {
+      if (nextProps.istAusgeloggt){
+              localStorage.clear();
+            console.log("Sie sind jetzt ddausgeloggt"); 
+              this.props.history.push("/");
+            }
+  
+      }
     
-    //     if (nextProps.istAusgeloggt){
-    //       localStorage.clear();
-    //     console.log(alert("Sie sind jetzt ddausgeloggt")); 
-    //       this.props.history.push("/");
-    //     }
-
-      
-
-    //   }  
 
 
   state = {}
@@ -46,6 +44,8 @@ class Navigation extends Component {
     const { activeItem } = this.state
 
     return (
+
+
       <div>
           <Menu>
         <Menu.Item
@@ -70,13 +70,13 @@ class Navigation extends Component {
         </Menu.Item>
 
 
-        {/* <div class="right menu">
+        <div className="right menu">
          <Button 
-      onClick={() => {this.props.ausLoggAction}}
+      onClick={this.props.ausLoggAction}
         >Ausloggen
         </Button>
         
-        </div> */}
+        </div> 
 
       
 
@@ -96,6 +96,7 @@ function mapStateToProps (state) {
         istAusgeloggt:state.istAusgeloggt
     }
 }
+
 
 export default withRouter(connect(mapStateToProps, actionCreators)(Navigation))
 

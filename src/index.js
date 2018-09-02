@@ -27,11 +27,10 @@ ReactDOM.render(
     
     <div>
     
-     <Navigation/>
     
     <Route exact={true} path={"/"} component={Loginseite}/>
-    <Route path={"/Startseite"} component={Startseite}/>
-    <Route path={"/Zweiteseite"} component={Zweiteseite}/>
+    <Route exact={true} path={"/Startseite"} component={Startseite}/>
+    <Route exact={true} path={"/Zweiteseite"} component={Zweiteseite}/>
 
     
     </div>
