@@ -50,7 +50,7 @@ class Navigation extends Component {
 
           {/*{this.state.navigationEinblenden && (..)} bedeutet das Zustand vom Objekt navigationEinblenden true ist
         also nicht false, dann für in diesem Beispiel die externe Komponente aus*/}
-        {!this.props.navigationEinblenden && ( 
+        {this.props.navigationEinblenden && ( 
 
           <Menu>
         <Menu.Item

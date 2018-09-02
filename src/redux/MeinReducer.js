@@ -17,7 +17,7 @@ export const reducer = (state = initialState, action) => {
                 //istEingeloggt: alert("hallo"),
                 email: state.email,
                 password: state.password,
-                navigationEinblenden:true
+                navigationEinblenden:false
                
                 
             };
