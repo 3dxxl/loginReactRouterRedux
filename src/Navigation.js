@@ -23,12 +23,11 @@ import { Menu, Button } from 'semantic-ui-react'
 class Navigation extends Component {
 
 
-     //Auslogg Anweisung
+     //Auslogg Anweisung, falls der Zustand geändert wurde, dann lösche den localstorage und starte die seite neu
     componentWillUpdate(nextProps) {
       if (nextProps.istAusgeloggt){
               localStorage.clear();
             console.log("Sie sind jetzt ddausgeloggt"); 
-              //this.props.history.push("/");
               window.location.reload()
             }
   
