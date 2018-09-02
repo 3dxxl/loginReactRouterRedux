@@ -26,8 +26,8 @@ class Navigation extends Component {
      //Auslogg Anweisung, falls der Zustand geändert wurde, dann lösche den localstorage und starte die seite neu
     componentWillUpdate(nextProps) {
       if (nextProps.istAusgeloggt){
-              localStorage.clear();
-            console.log("Sie sind jetzt ddausgeloggt"); 
+        localStorage.removeItem('react-localStorage-user');
+            console.log("Sie sind jetzt ausgeloggt"); 
               window.location.reload()
             }
   

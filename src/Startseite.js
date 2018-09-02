@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 
-//react router
-import { withRouter } from "react-router-dom";
-
-import {connect} from 'react-redux';
-import {actionCreators} from './redux/MeineActions';
-
 export class Startseite extends Component {
 
 
@@ -32,20 +26,9 @@ export class Startseite extends Component {
   }
 }
 
+export default Startseite;
 
 
 
-//Hier kommen die Zustände aus MeinStore.js rein um diese dann mit props zu verwenden
-function mapStateToProps (state) {
-    return {
-        email: state.email, 
-        password:state.password,
-        navigationEinblenden:state.navigationEinblenden
-    }
-}
-  
-//wichtig: ich musste heir SignIn eintragen anstatt (App)
-
-export default withRouter(connect(mapStateToProps, actionCreators)(Startseite))
 
 

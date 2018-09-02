@@ -25,13 +25,11 @@ export const reducer = (state = initialState, action) => {
         case "hatSichAusgeloggt": 
 
             return {
-                ...state,
+               // ...state,
                 istAusgeloggt: true,
                 navigationEinblenden:true
                 
-                
-
-
+        
                     
                 };
                 
