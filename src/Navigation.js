@@ -47,6 +47,12 @@ class Navigation extends Component {
 
 
       <div>
+
+          {/*{this.state.loader && (..)} bedeutet das wenn loader true ist
+        also nicht false, dann für in diesem Beispiel die externe Komponente
+        Animation aus*/}
+        {this.state.navigationEinblenden && ( 
+
           <Menu>
         <Menu.Item
           name='editorials'
@@ -78,10 +84,12 @@ class Navigation extends Component {
         
         </div> 
 
-      
-
       </Menu>
 
+
+        ) }
+
+          
     
 
       </div>
@@ -93,7 +101,8 @@ class Navigation extends Component {
 //Hier kommen die Zustände aus MeinStore.js rein um diese dann mit props zu verwenden
 function mapStateToProps (state) {
     return {
-        istAusgeloggt:state.istAusgeloggt
+        istAusgeloggt:state.istAusgeloggt,
+        navigationEinblenden:state.istEingeloggt
     }
 }
 

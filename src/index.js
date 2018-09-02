@@ -27,7 +27,6 @@ ReactDOM.render(
     
     <div>
     
-    
     <Route exact={true} path={"/"} component={Loginseite}/>
     <Route exact={true} path={"/Startseite"} component={Startseite}/>
     <Route exact={true} path={"/Zweiteseite"} component={Zweiteseite}/>

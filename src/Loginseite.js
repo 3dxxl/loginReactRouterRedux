@@ -112,7 +112,9 @@ class Loginseite extends Component {
 function mapStateToProps (state) {
     return {
         email: state.email, 
-        password:state.password}
+        password:state.password,
+        navigationEinblenden:state.navigationEinblenden
+    }
 }
   
 //wichtig: ich musste heir SignIn eintragen anstatt (App)
