@@ -13,7 +13,7 @@ export const reducer = (state = initialState, action) => {
 
              
 
-                ...state, 
+               // ...state, 
                 //istEingeloggt: alert("hallo"),
                 email: state.email,
                 password: state.password,
