@@ -6,11 +6,39 @@ import registerServiceWorker from './registerServiceWorker';
 //Semantic UI CSS
 import 'semantic-ui-css/semantic.min.css';
 
+//react router
+import { HashRouter, Route } from "react-router-dom";
 import Loginseite from './Loginseite';
+import Startseite from './Startseite';
+import Zweiteseite from './Zweiteseite';
+
+//redux
+import {store} from './redux/MeinStore';
+import {Provider} from 'react-redux';
+
+
+//Die Navigation
+import Navigation from './Navigation';
 
 ReactDOM.render(
+<Provider store={store}>
 
-<Loginseite/>
+<HashRouter>
+    
+    <div>
+    
+     <Navigation/>
+    
+    <Route exact={true} path={"/"} component={Loginseite}/>
+    <Route path={"/Startseite"} component={Startseite}/>
+    <Route path={"/Zweiteseite"} component={Zweiteseite}/>
+
+    
+    </div>
+    </HashRouter>
+
+</Provider>
+
 
 
 , document.getElementById('root'));
