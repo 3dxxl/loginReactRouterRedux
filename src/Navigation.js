@@ -28,7 +28,8 @@ class Navigation extends Component {
       if (nextProps.istAusgeloggt){
               localStorage.clear();
             console.log("Sie sind jetzt ddausgeloggt"); 
-              this.props.history.push("/");
+              //this.props.history.push("/");
+              window.location.reload()
             }
   
       }
@@ -50,7 +51,7 @@ class Navigation extends Component {
 
           {/*{this.state.navigationEinblenden && (..)} bedeutet das Zustand vom Objekt navigationEinblenden true ist
         also nicht false, dann für in diesem Beispiel die externe Komponente aus*/}
-        {!this.props.navigationEinblenden && ( 
+        {this.props.navigationEinblenden && ( 
 
           <Menu>
         <Menu.Item
