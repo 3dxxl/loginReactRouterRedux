@@ -48,10 +48,9 @@ class Navigation extends Component {
 
       <div>
 
-          {/*{this.state.loader && (..)} bedeutet das wenn loader true ist
-        also nicht false, dann für in diesem Beispiel die externe Komponente
-        Animation aus*/}
-        {this.state.navigationEinblenden && ( 
+          {/*{this.state.navigationEinblenden && (..)} bedeutet das Zustand vom Objekt navigationEinblenden true ist
+        also nicht false, dann für in diesem Beispiel die externe Komponente aus*/}
+        {!this.state.navigationEinblenden && ( 
 
           <Menu>
         <Menu.Item

@@ -18,7 +18,7 @@ import {Provider} from 'react-redux';
 
 
 //Die Navigation
-// import Navigation from './Navigation';
+ import Navigation from './Navigation';
 
 ReactDOM.render(
 <Provider store={store}>
@@ -27,7 +27,7 @@ ReactDOM.render(
     
     <div>
 
-
+    <Navigation/>
     
     <Route exact={true} path={"/"} component={Loginseite}/>
     <Route exact={true} path={"/Startseite"} component={Startseite}/>
