@@ -1,13 +1,9 @@
 export const actionCreators = {
+  einLoggAction: event => {
+    return { type: "hatSicheingeloggt" };
+  },
 
-    einLoggAction:(event) => {
-        return {type: "hatSicheingeloggt"};
-    },
-
-    ausLoggAction: (event) => {
-        return {type: "hatSichAusgeloggt"}; 
-        
-
-    }
-
-}
+  ausLoggAction: event => {
+    return { type: "hatSichAusgeloggt" };
+  }
+};
