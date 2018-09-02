@@ -102,7 +102,7 @@ class Navigation extends Component {
 function mapStateToProps (state) {
     return {
         istAusgeloggt:state.istAusgeloggt,
-        navigationEinblenden:state.istEingeloggt
+        navigationEinblenden:state.navigationEinblenden
     }
 }
 

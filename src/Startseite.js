@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+
 
 export class Startseite extends Component {
 
@@ -26,4 +28,8 @@ export class Startseite extends Component {
   }
 }
 
+
+
 export default Startseite
+
+
