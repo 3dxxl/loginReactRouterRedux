@@ -6,7 +6,7 @@ export const initialState = {
     email: "",
     password:"",
     istAusgeloggt:false,
-    navigationEinblenden:true,
+    navigationEinblenden:false,
 };
 
 
