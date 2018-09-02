@@ -21,36 +21,43 @@ import { Menu, Button } from 'semantic-ui-react'
 
 
 class Navigation extends Component {
-
-
-     //Auslogg Anweisung, falls der Zustand geändert wurde, dann lösche den localstorage und starte die seite neu
-    componentWillUpdate(nextProps) {
-      if (nextProps.istAusgeloggt){
-        localStorage.removeItem('react-localStorage-user');
-            console.log("Sie sind jetzt ausgeloggt"); 
-              window.location.reload()
-            }
-  
+    constructor(props) {
+      super(props);
+      this.state  = {
+        isloggedIn: this.props.istAusgeloggt
       }
+    }
+
+     //Auslogg Anweisung
+    // componentWillUpdate(nextProps) {
+    //   if (nextProps.istAusgeloggt){
+    //           localStorage.clear();
+    //         console.log("Sie sind jetzt ddausgeloggt"); 
+    //           this.props.history.push("/");
+    //         }
+    // }
     
 
 
   state = {}
 
+  handleLogout() {
+    localStorage.removeItem('react-localStorage-user');
+    window.location.reload();
+  }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
 
     const { activeItem } = this.state
-
-    return (
+    console.log(this.props.istAusgeloggt)
+    return this.props.istAusgeloggt ? (
 
 
       <div>
 
           {/*{this.state.navigationEinblenden && (..)} bedeutet das Zustand vom Objekt navigationEinblenden true ist
         also nicht false, dann für in diesem Beispiel die externe Komponente aus*/}
-        {this.props.navigationEinblenden && ( 
 
           <Menu>
         <Menu.Item
@@ -77,7 +84,7 @@ class Navigation extends Component {
 
         <div className="right menu">
          <Button 
-      onClick={this.props.ausLoggAction}
+      onClick={this.handleLogout.bind(this)}
         >Ausloggen
         </Button>
         
@@ -86,13 +93,11 @@ class Navigation extends Component {
       </Menu>
 
 
-        ) }
-
           
     
 
       </div>
-    );
+    ) : null
   }
 }
 

@@ -13,24 +13,20 @@ export const reducer = (state = initialState, action) => {
 
              
 
-               // ...state, 
+               ...state, 
                 //istEingeloggt: alert("hallo"),
                 email: state.email,
                 password: state.password,
-                navigationEinblenden:true
-               
-                
+                navigationEinblenden:true,
+                istAusgeloggt: true
             };
 
         case "hatSichAusgeloggt": 
 
             return {
-               // ...state,
+                ...state,
                 istAusgeloggt: true,
-                navigationEinblenden:false
-                
-        
-                    
+                navigationEinblenden:true
                 };
                 
             
