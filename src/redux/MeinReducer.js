@@ -27,7 +27,7 @@ export const reducer = (state = initialState, action) => {
             return {
                // ...state,
                 istAusgeloggt: true,
-                navigationEinblenden:true
+                navigationEinblenden:false
                 
         
                     
