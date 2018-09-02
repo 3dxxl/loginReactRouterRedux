@@ -1,21 +1,69 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+//Semantic UI Elemente
+import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react';
+
 
 class Loginseite extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+     <div className='login-form'>
+                {/*
+                    Heads up! The styles below are necessary for the correct render of this example.
+                    You can do same with CSS, the main idea is that all the elements up to the `Grid`
+                    below must have a height of 100%.
+                */}
+                <style>{`
+                    body > div,
+                    body > div > div,
+                    body > div > div > div.login-form {
+                        height: 100%;
+                    }
+                `}</style>
+                <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+                    <Grid.Column style={{ maxWidth: 450 }}>
+                        <Header as='h2' color='teal' textAlign='center'>
+                            <Image src={require('./logo.svg')} /> Log-in to your account
+                        </Header>
+                        <Form size='large'>
+                            <Segment stacked>
+                                <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' type='email'
+                                    onChange={this.handleChange}
+                                />
+                                <Form.Input
+                                    fluid
+                                    icon='lock'
+                                    iconPosition='left'
+                                    placeholder='Password'
+                                    type='password'
+                                    onChange={this.handleChangepas}
+
+                                />
+
+                                <Button color='teal' fluid size='large'
+                               
+                                    onClick={
+                                        event => {
+                                            this.zweiFunktionen();
+                                            this.props.einLoggAction();
+                                        }
+                                    }
+                                >
+                                    Login
+                                </Button>
+                            </Segment>
+                        </Form>
+                        {/* 
+                            <Message>
+                                New to us? <a href='#'>Sign Up</a>
+                            </Message> 
+                        */}
+                    </Grid.Column>
+                </Grid>
+            </div>
+        );
+    }
 }
 
 export default Loginseite;

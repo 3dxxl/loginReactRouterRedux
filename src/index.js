@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+//Semantic UI CSS
+import 'semantic-ui-css/semantic.min.css';
+
+import Loginseite from './Loginseite';
 
 ReactDOM.render(
 
